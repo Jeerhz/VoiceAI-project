@@ -1,42 +1,33 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter, Montserrat } from "next/font/google"
-import "./globals.css"
-import { Sidebar } from "@/components/layout/sidebar"
-import { Header } from "@/components/layout/header"
+import type React from "react";
+import type { Metadata } from "next";
+import { Inter, Poppins } from "next/font/google";
+import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-sans",
-})
+  variable: "--font-inter",
+});
 
-const montserrat = Montserrat({
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-display",
-})
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
+});
 
 export const metadata: Metadata = {
-  title: "VoiceSurvey - AI-Powered Voice Satisfaction Surveys",
-  description: "Conduct and analyze voice-based satisfaction surveys with AI-powered agents",
-    generator: 'v0.dev'
-}
+  title: "VoiceSurvey - Enquêtes de satisfaction vocales alimentées par l'IA",
+  description:
+    "Menez et analysez des enquêtes de satisfaction vocales avec des agents alimentés par l'IA",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${montserrat.variable}`}>
-      <body className="bg-gradient-to-br from-gray-50 via-white to-gray-100 min-h-screen">
-        <div className="flex">
-          <Sidebar />
-          <div className="flex-1 lg:ml-64">
-            <Header />
-            <main className="p-6 lg:p-8">{children}</main>
-          </div>
-        </div>
-      </body>
+    <html lang="fr" className={`${inter.variable} ${poppins.variable}`}>
+      <body className="font-inter antialiased">{children}</body>
     </html>
-  )
+  );
 }

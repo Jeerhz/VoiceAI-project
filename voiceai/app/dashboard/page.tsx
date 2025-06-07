@@ -7,21 +7,10 @@ import {
 } from "lucide-react";
 import { StatsCard } from "@/components/dashboard/stats-card";
 import { Button } from "@/components/ui/button";
-import { LandingHeader } from "@/components/landing/header";
-import { Hero } from "@/components/landing/hero";
-import { Features } from "@/components/landing/features";
-import { Pricing } from "@/components/landing/pricing";
-import { Footer } from "@/components/landing/footer";
 
 export default function Dashboard() {
   return (
-    <div className="min-h-screen">
-      <LandingHeader />
-      <Hero />
-      <Features />
-      <Pricing />
-      <Footer />
-
+    <div className="space-y-8">
       {/* Welcome Section */}
       <div className="bg-gradient-to-r from-violet-600 via-violet-700 to-teal-600 rounded-2xl p-8 text-white">
         <div className="max-w-3xl">
