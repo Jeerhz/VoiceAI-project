@@ -13,7 +13,7 @@ import { Features } from "@/components/landing/features";
 import { Pricing } from "@/components/landing/pricing";
 import { Footer } from "@/components/landing/footer";
 
-export default function Dashboard() {
+export default function Landing() {
   return (
     <div className="min-h-screen">
       <LandingHeader />

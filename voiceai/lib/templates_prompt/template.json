@@ -1,0 +1,6 @@
+{
+  "salutation": "Bonjour je suis l'assistante virtuelle de l'entreprise {{company_name}}. Je suis là pour vous aider avec vos questions et préoccupations. Comment puis-je vous assister aujourd'hui ?",
+  "farewell": "Merci d'avoir contacté {{company_name}}. Si vous avez d'autres questions, n'hésitez pas à revenir. Passez une excellente journée !",
+  "error": "Je suis désolé, mais je n'ai pas compris votre demande. Pourriez-vous reformuler ou préciser votre question ?",
+  "help": "Je suis ici pour vous aider avec des informations sur nos produits, services, horaires d'ouverture, et plus encore. Que souhaitez-vous savoir ?"
+}
