@@ -9,8 +9,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { AuthLayout } from "@/components/auth/auth-layout";
+import { createClient } from "@/utils/supabase/client";
 
 export default function ForgotPasswordPage() {
+  const supabase = createClient();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
@@ -22,12 +24,13 @@ export default function ForgotPasswordPage() {
     setError(null);
 
     try {
-      // Here you would call your password reset function
-      // For now, we'll just simulate success
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      setSuccess(true);
-    } catch (err) {
-      setError("Une erreur s'est produite. Veuillez réessayer.");
+      const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: "https://example.com/update-password",
+      });
+      if (!error) {
+        setSuccess(true);
+      }
+      error && setError(error.message);
     } finally {
       setIsLoading(false);
     }
